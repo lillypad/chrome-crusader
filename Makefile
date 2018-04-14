@@ -1,4 +1,5 @@
 .PHONY: all
+.PHONY: clean
 .PHONY: docs
 
 all: docs
@@ -10,7 +11,9 @@ docs:
 	cd docs/presentation/ && \
 		pdflatex -shell-escape chrome-crusader.tex
 
-clean:
+clean: clean_docs
+
+clean_docs:
 	cd docs/presentation/ && \
 		rm -f *.aux && \
 		rm -f *.log && \

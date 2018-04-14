@@ -1,3 +1,7 @@
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/lillypad/chrome-crusader/blob/master/LICENSE)
+[![Python 2](https://img.shields.io/badge/Python-2-brightgreen.svg)](https://github.com/lillypad/chrome-crusader/)
+[![Python 3](https://img.shields.io/badge/Python-3-brightgreen.svg)](https://github.com/lillypad/chrome-crusader/)
+
 # Chrome Crusader
 
 Chrome Crusader is a Google Chrome browser extension malware / botnet.
