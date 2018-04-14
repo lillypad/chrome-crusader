@@ -5,7 +5,7 @@
 
 # Chrome Crusader
 
-![Chrome Crusader](docs/presentation/img/chrome_pony_evil.png =515x498)
+![Chrome Crusader](docs/presentation/img/chrome_pony_evil.png){:height="515px" width="498px"}
 
 # Description
 
