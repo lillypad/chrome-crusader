@@ -5,7 +5,7 @@
 
 # Chrome Crusader
 
-<img src="https://raw.githubusercontent.com/lillypad/chrome-crusader/docs/presentation/img/chrome_pony_evil.png" alt="Chrome Crusader" width="515px" height="498px">
+<img src="https://github.com/lillypad/chrome-crusader/raw/master/docs/presentation/img/chrome_pony_evil.png" alt="Chrome Crusader" width="515px" height="498px">
 
 # Description
 
