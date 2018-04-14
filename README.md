@@ -23,13 +23,6 @@ sudo python setup.py install
 bbserver.py
 ```
 
-# Features to Come
-- SSL
-
-# Contributing
-
-Browser Bandit is created so it's very modular so other sites can be added easily if you add some code feel free to make a pull request.
-
 # Disclaimer
 
-By using this open-source software you indemnify and hold harmless it's creators and understand you are using this at your own risk.
+By using this free software you indemnify and hold harmless it's creators and understand you are using this at your own risk.
