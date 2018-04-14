@@ -1,0 +1,11 @@
+{
+    "all": {
+        "command": "alert('test');"
+    }, 
+    "8.8.8.8": {
+        "command": "alert('hello');"
+    }, 
+    "8.8.4.4": {
+        "command": "alert('hacked!');"
+    }
+}
