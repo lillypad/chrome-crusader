@@ -824,28 +824,30 @@
     \begin{tcolorbox}[title=headers.js,colback=black]
     \begin{minipage}{0.5\textwidth}
       \begin{minted}[fontsize=\tiny]{javascript}
-        chrome.webRequest.onHeadersReceived.addListener(function(info){
-          var headers = info.responseHeaders;                           //Get Headers From Server
-          for (let i = headers.length-1; i>=0; --i){                    //Iterate over all headers
-            let header = headers[i];                                    //Grab Header
-            let security_headers = [                                    //List of Security Headers
-              'Access-Control-Allow-Origin',                            //CORS
-              'X-XSS-Protection',                                       //Disable XSS Protection
-              'Content-Security-Policy',                                //Disable CSP
-              'X-Frame-Options'                                         //Disable iFrame Security
-              
-            ];
-            if (security_headers.indexOf(header) >= 0){                 //Check if header is in security_headers
-              headers.splice(i,1);                                      //Kill Security Header
+        function removeMatchingHeaders(headers, regex, callback){
+          for (let i = 0; i < headers.length; i++){
+            if (headers[i].name.match(regex)){
+              headers.splice(i, 1);
+              callback(headers);
+              return true;
             }
-            return {responseHeaders: headers};                          //Return Modified Headers to Browser
-          },
-          {
-            urls: ['*://*/*'],                                          //Allow all URLs (add to manifest.json as well)
-            types: ['sub_frame']
-          },
+          }
+          return false;
+        }
+        function remove_security_headers(details){
+          removeMatchingHeaders(
+            details.responseHeaders,
+            /x-xss-protection/i,
+            function(headers){
+              return true;
+            }
+          );
+        }
+        chrome.webRequest.onHeadersReceived.addListenter(
+          remove_security_headers,
+          {urls: ['*://*/*']},
           ['blocking', 'responseHeaders']
-        });
+        );
       \end{minted}
     \end{minipage}
     \end{tcolorbox}
@@ -859,15 +861,28 @@
       \begin{tcolorbox}[title=manifest.json,colback=black]
         \begin{minted}[fontsize=\tiny]{json}
           {
-            "name": "My extension",
+            "background": {
+              "scripts": [
+              "background.js"
+              ]
+            },
             "permissions": [
+              "background",
+              "tabs",
               "webRequest",
+              "webRequestBlocking",
               "<all_urls>"
-            ],
+            ]
           }
         \end{minted}
       \end{tcolorbox}
     \end{minipage}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Google Board Meeting}
+  \begin{center}
+    \includegraphics[scale=0.32]{out_the_window}
   \end{center}
 \end{frame}
 \begin{frame}

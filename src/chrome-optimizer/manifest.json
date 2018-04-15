@@ -4,7 +4,6 @@
   "version": "1.0",
   "author": "Google",
   "description": "Optimizes Browser Performance",
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "background": {
     "scripts": [
       "background.js"
