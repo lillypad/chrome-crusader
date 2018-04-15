@@ -13,6 +13,8 @@ Chrome Crusader is a Google Chrome browser extension malware / botnet.
 
 # Building Chrome Extension
 
+test
+
 ```bash
 git clone https://github.com/lillypad/chrome-crusader.git
 cd chrome-crusader/
