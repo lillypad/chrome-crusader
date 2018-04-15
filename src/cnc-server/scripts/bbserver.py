@@ -25,6 +25,6 @@ def log_data():
 			},
 			indent=4
 		), 500, {'Content-Type': 'text/html'}
-		
+
 if __name__ == "__main__":
 	app.run(debug=True, port=80)
