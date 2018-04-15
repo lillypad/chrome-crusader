@@ -2,7 +2,11 @@
 .PHONY: clean
 .PHONY: docs
 
-all: docs
+all: lint docs
+
+lint:
+	find src/chrome-optimizer/ -type f -name "*.js" | xargs jshint
+	find src/ -type f -name "*.py" | xargs pylint -E
 
 py_deps:
 	pip install --user -r requirements.txt

@@ -10,7 +10,6 @@ function get_user(){
 function get_pass(){
 	try {
 		return document.getElementById('regSignInPassword').value;
-		return true;
 	} catch(error){
 		console.log(error);
 		return false;
@@ -28,7 +27,6 @@ function get_user_pass(){
 			}
 		};
 		return data;
-		return true;
 	} catch(error){
 		console.log(error);
 		return false;

