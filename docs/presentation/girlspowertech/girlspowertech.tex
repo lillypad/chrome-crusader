@@ -150,6 +150,19 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Disclaimer}
+  \framesubtitle{Stay Alert Stay Safe}
+  \begin{tcolorbox}[title=disclaimer.log,colback=gray]
+    The tools and techniques covered in this presentation can be dangerous and are\\
+    being shown for educational purposes.\\
+    \newline
+    It is a violation of Federal laws to attempt gaining unauthorized access to information, assets or systems belonging to others, or to exceed authorization on systems for which you have not been granted.\\
+    \newline
+    Only use these tools with/on systems you own or have written permission from the owner. We (the speakers) do not assume any responsibility and shall not be held liable for any illegal use of these tools.\\
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}
   \frametitle{What is Malware}
   \begin{center}
     \animategraphics[loop,controls,scale=0.4]{10}{img/malware/malware-}{0}{15}
@@ -180,6 +193,71 @@
   \framesubtitle{How is it possible?}
   \begin{center}
     \includegraphics[scale=0.2]{how}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Google Chrome Extensions}
+  \framesubtitle{Which one is Malware?}
+  \begin{center}
+    \includegraphics[scale=0.3]{extensions}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{How does it Work?}
+  \begin{center}
+    \begin{itemize}
+    \item Access All Page Data
+    \item Bypass Security Headers
+    \item AJAX Requests
+    \end{itemize}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Accessing All Page Data}
+  \begin{center}
+    \begin{itemize}
+    \item Extensions live inside the browser
+    \item Able to access the DOM (rendered page data)
+    \item Works on HTTP as well as HTTPS websites (includes banking websites)
+    \item Steals information
+      \begin{itemize}
+      \item Usernames
+      \item Passwords
+      \item Cookies
+      \item IP Address
+      \item Conversations
+      \end{itemize}
+    \end{itemize}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Bypass Security Headers}
+  \begin{center}
+      \begin{tcolorbox}[title=Security Header Definition,colback=gray]
+        Data that exists within the HTTP protocol as headers that is sent by a server to a browser to invoke security policies.
+      \end{tcolorbox}
+      \begin{itemize}
+      \item Feature is built in
+      \item Allows modification of security headers
+      \item Part of Google's Custom JavaScript Extension API
+      \end{itemize}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{AJAX Requests}
+  \begin{center}
+    \begin{tcolorbox}[title=\href{https://en.wikipedia.org/wiki/Ajax_(programming)}{AJAX Definition},colback=gray]
+      With Ajax, Web applications can send and retrieve data from a server asynchronously (in the background) without interfering with the display and behavior of the existing page.
+    \end{tcolorbox}
+    \begin{itemize}
+    \item Send data back and forth in the background
+    \item Execute commands based on the data you receive
+    \end{itemize}
   \end{center}
 \end{frame}
 
