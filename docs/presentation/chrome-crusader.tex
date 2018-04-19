@@ -4,6 +4,8 @@
 \usepackage{eso-pic}
 
 \usepackage{minted}
+\usepackage{hyperref}
+\usepackage{animate}
 
 \usepackage{tcolorbox}
 
@@ -393,6 +395,9 @@
 \end{frame}
 \begin{frame}
   \frametitle{You are Infect!}
+  \begin{center}
+    \includegraphics[scale=0.4]{youareinfect}
+  \end{center}
 \end{frame}
 \begin{frame}[fragile]{}
   \frametitle{Javascript XMLHttpRequest}
@@ -688,8 +693,7 @@
             return true;
           } catch(error){
             return false;
-          }
-        });
+          }});
       \end{minted}
     \end{minipage}
     \end{tcolorbox}
@@ -910,6 +914,34 @@
   \frametitle{Google Board Meeting}
   \begin{center}
     \includegraphics[scale=0.32]{out_the_window}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Google Chrome Site Isolation}
+  \framesubtitle{As of 2018/04/19}
+  \begin{center}
+    \begin{tcolorbox}[title=\href{https://www.bleepingcomputer.com/news/google/google-chrome-66-released-today-focuses-on-security/}{Bleeping Computer},colback=gray]
+      A second security-focused feature that will go live with Chrome 66 is something called "Strict Site Isolation." \\
+      \newline
+      The feature has been available in Chrome since version 63, but it was turned off by default and was hidden behind a Chrome flag. Now, Google says it will turn on this security feature for a small percentage of users to prepare for a broader upcoming launch.\\
+    \end{tcolorbox}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Google Chrome Site Isolation}
+  \framesubtitle{What does it do?}
+  \begin{center}
+      
+    \begin{tcolorbox}[title=\href{http://www.chromium.org/Home/chromium-security/site-isolation}{Google Chrome Site Security Isolation},colback=gray]
+      Websites typically cannot access each other's data inside the browser, thanks to code that enforces the Same Origin Policy.  Occasionally, security bugs are found in this code and malicious websites may try to bypass these rules to attack other websites.  The Chrome team aims to fix such bugs as quickly as possible.
+    \end{tcolorbox}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Google Chrome Site Isolation}
+  \framesubtitle{Did they see my talk coming up?}
+  \begin{center}
+    \animategraphics[loop,controls,scale=0.45]{10}{img/trollface/trollface-}{0}{4}
   \end{center}
 \end{frame}
 \begin{frame}
