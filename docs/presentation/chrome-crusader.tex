@@ -122,7 +122,6 @@
   \item Hooking
   \item Credential Stealing
   \item Security Headers
-  \item Taking it the Extra Mile
   \item POC / Demo
   \item Questions
   \end{itemize}
@@ -762,7 +761,7 @@
 \begin{frame}
   \frametitle{Security Headers}
   \framesubtitle{X-Frame-Options}
-  "The X-Frame-Options HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a <frame>, <iframe> or <object> . Sites can use this to avoid clickjacking attacks, by ensuring that their content is not embedded into other sites." - MDN\\
+  "The X-Frame-Options HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a frame, iframe or object. Sites can use this to avoid clickjacking attacks, by ensuring that their content is not embedded into other sites." - MDN\\
   \bigskip
   \begin{tcolorbox}[title=X-Frame-Options Header Example,colback=gray]
     X-Frame-Options: SAMEORIGIN;
@@ -821,7 +820,7 @@
   \frametitle{Insecurity Headers}
   \framesubtitle{Killing Security Headers}
   \begin{center}
-    \begin{tcolorbox}[title=headers.js,colback=black]
+    \begin{tcolorbox}[title=background.js,colback=black]
     \begin{minipage}{0.5\textwidth}
       \begin{minted}[fontsize=\tiny]{javascript}
         function removeMatchingHeaders(headers, regex, callback){
@@ -853,6 +852,34 @@
     \end{tcolorbox}
   \end{center}
 \end{frame}
+
+\begin{frame}[fragile]{}
+  \frametitle{Insecurity Headers}
+  \framesubtitle{Killing Security Headers}
+  \begin{center}
+    \begin{tcolorbox}[title=background.js,colback=black]
+    \begin{minipage}{0.5\textwidth}
+      \begin{minted}[fontsize=\tiny]{javascript}
+        //Replace Access-Control-Allow-Origin
+        removeMatchingHeaders(
+          details.responseHeaders,
+          /access-control-allow-origin/i,
+          function(headers){
+            let header = {
+              name: 'Access-Control-Allow-Origin',
+              value: '*'
+            };
+            console.log('Replaced Header: ' + '{' + header.name + ':' + header.value + '}');
+            headers.push(header);
+            return true;
+          }
+        );
+      \end{minted}
+    \end{minipage}
+    \end{tcolorbox}
+  \end{center}
+\end{frame}
+
 \begin{frame}[fragile]{}
   \frametitle{Insecurity Headers}
   \framesubtitle{The Manifesto}
@@ -883,23 +910,6 @@
   \frametitle{Google Board Meeting}
   \begin{center}
     \includegraphics[scale=0.32]{out_the_window}
-  \end{center}
-\end{frame}
-\begin{frame}
-  \frametitle{Taking it the Extra Mile}
-  \begin{center}
-    \includegraphics[scale=0.5]{montage}
-  \end{center}
-\end{frame}
-\begin{frame}
-  \frametitle{Taking it the Extra Mile}
-  \framesubtitle{Exploitation}
-  \begin{center}
-    \begin{tcolorbox}[title=CVE-2018-4878,colback=gray]
-      A use-after-free vulnerability was discovered in Adobe Flash Player before 28.0.0.161. This vulnerability occurs due to a dangling pointer in the Primetime SDK related to media player handling of listener objects. A successful attack can lead to arbitrary code execution. This was exploited in the wild in January and February 2018. 
-    \end{tcolorbox}
-    \bigskip
-    We can inject cross site data thus we should be able to host our malicious swf and escalate to user on all vulnerable bots in our botnet.
   \end{center}
 \end{frame}
 \begin{frame}
