@@ -37,11 +37,11 @@ docs_girlspowertech:
 	mkdir -p bin/presentation/girlspowertech/
 	cd docs/presentation/girlspowertech/ && \
 		mv girlspowertech.pdf ../../../bin/presentation/girlspowertech/
-#	cd docs/handouts/girlspowertech/ && \
-#		pdflatex -shell-escape girlspowertech.tex
-#	mkdir -p bin/handouts/girlspowertech/ && \
-#	cd docs/handouts/girls/powertech/ && \
-#		mv girlspowertech.pdf ../../../bin/handouts/girlspowertech/
+	cd docs/handouts/girlspowertech/ && \
+		pdflatex -shell-escape girlspowertech.tex
+	mkdir -p bin/handouts/girlspowertech/
+	cd docs/handouts/girlspowertech/ && \
+		mv girlspowertech.pdf ../../../bin/handouts/girlspowertech/
 	@echo -e "\e[30;48;5;82m Build Documentation Complete! \e[0m"
 
 build_chromium:
