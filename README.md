@@ -48,7 +48,7 @@ make docs
 ```bash
 cd cnc-server/
 sudo python setup.py install
-bbserver.py
+ccserver.py
 ```
 
 # Disclaimer
