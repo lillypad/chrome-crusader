@@ -19,6 +19,9 @@ In the words of Google:
 
 :trollface: It's so easy to bypass cross-site scripting and security headers in this malware anyone can do it :trollface:
 
+# Screenshots
+![Chrome Crusader](https://github.com/lillypad/chrome-crusader/raw/develop/img/screenshot_0.png)
+
 # Building Chrome Crusader
 
 **Download Source**
@@ -48,7 +51,7 @@ make docs
 ```bash
 cd cnc-server/
 sudo python setup.py install
-bbserver.py
+ccserver.py
 ```
 
 # Disclaimer
