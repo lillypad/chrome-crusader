@@ -19,6 +19,9 @@ In the words of Google:
 
 :trollface: It's so easy to bypass cross-site scripting and security headers in this malware anyone can do it :trollface:
 
+# Screenshots
+![[Chrome Crusader](img/screenshot_0.png)
+
 # Building Chrome Crusader
 
 **Download Source**
