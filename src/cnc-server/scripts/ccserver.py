@@ -13,7 +13,7 @@ def log_data():
         data = request.json
         print(json.dumps(data, indent=4))
         if 'bot' in data:
-            return "console.log('hello');"
+            return "console.log('1337 botnet dude!');"
         return json.dumps(
             data,
             indent=4
