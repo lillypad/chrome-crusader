@@ -8,7 +8,7 @@
 Chrome Crusader is a Google Chrome browser extension malware / botnet.
 
 <p align="center">
-  <img src="https://img.youtube.com/vi/6c-FcwwSqIs/0.jpg" href="https://www.youtube.com/watch?v=6c-FcwwSqIs"/>
+  <a href="https://www.youtube.com/watch?v=6c-FcwwSqIs"><img src="https://img.youtube.com/vi/6c-FcwwSqIs/0.jpg"/></a>
 </p>
 
 <p align="center">
